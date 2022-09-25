@@ -1,12 +1,17 @@
 syntax on
 call plug#begin('~/.vim/plugged')
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'EdenEast/nightfox.nvim' 
 call plug#end()
+
+colorscheme carbonfox
 
 let g:python3_host_prog = '~/.virtualenvs/env/bin/python3'
 let g:python_host_prog = '~/.virtualenvs/env/bin/python'
@@ -31,9 +36,11 @@ set history=1000  " remember more commands and search history
 set nobackup  " no backup or swap file, live dangerously
 set noswapfile  " swap files give annoying warning
 
+nnoremap <C-l> :bn<CR>
+nnoremap <C-k> :bp<CR>
 " coc
 
-set signcolumn=yes
+set signcolumn=no
 " <Tab>: completion
 inoremap <silent><expr> <Tab>
     \ pumvisible() ? "\<C-N>" :
@@ -47,6 +54,11 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 " NerdTree
 nnoremap <f2> :NERDTreeToggle<CR>
 
+let NERDTreeQuitOnOpen=1
+
+let NERDTreeMinimalUI=1
+
+
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
                 \ 'Staged'    :'✚',
@@ -59,3 +71,8 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Clean'     :'✔︎',
                 \ 'Unknown'   :'?',
                 \ }
+
+" vim airline
+
+let g:airline#extensions#tabline#enabled = 1
+
