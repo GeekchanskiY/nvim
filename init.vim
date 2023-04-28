@@ -12,6 +12,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'EdenEast/nightfox.nvim'
 
+Plug 'preservim/nerdtree'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " cmp
 
 Plug 'neovim/nvim-lspconfig'
@@ -25,6 +30,11 @@ call plug#end()
 
 
 colorscheme carbonfox
+
+nnoremap <f2> :NERDTreeToggle<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_statusline_ontop=1
 
 lua <<EOF
   -- Set up nvim-cmp.
