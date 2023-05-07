@@ -8,14 +8,22 @@ set tabstop=4
 set softtabstop=4           
 set nobackup
 
+set clipboard=unnamedplus
+
+
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'EdenEast/nightfox.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'preservim/nerdtree'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'ap/vim-css-color'
+
 
 " cmp
 
@@ -34,7 +42,11 @@ colorscheme carbonfox
 nnoremap <f2> :NERDTreeToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_statusline_ontop=1
+let g:airline#extensions#tabline#enabled = 1
+
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+
 
 lua <<EOF
   -- Set up nvim-cmp.
