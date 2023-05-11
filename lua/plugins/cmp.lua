@@ -1,56 +1,4 @@
-set number
-set nocompatible
-set mouse=a
-syntax on 
-filetype plugin indent on
-set expandtab
-set tabstop=4                
-set softtabstop=4           
-set nobackup
-
-set clipboard=unnamedplus
-
-
-
-call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'EdenEast/nightfox.nvim'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-
-Plug 'preservim/nerdtree'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'ap/vim-css-color'
-
-
-" cmp
-
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-
-call plug#end()
-
-
-colorscheme carbonfox
-
-nnoremap <f2> :NERDTreeToggle<CR>
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
-
-
-lua <<EOF
-  -- Set up nvim-cmp.
-  local cmp = require'cmp'
+local cmp = require'cmp'
 
   cmp.setup({
     snippet = {
@@ -119,4 +67,3 @@ lua <<EOF
     }
   }
   }
-EOF
