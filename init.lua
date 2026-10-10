@@ -1,3 +1,6 @@
+-- required after macOS 27 update
+vim.env.SDKROOT = "/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk"
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4         
@@ -5,6 +8,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true     
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
+
+vim.opt.clipboard = "unnamedplus"
 
 vim.g.mapleader = ","
 
@@ -80,3 +85,15 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+-- GO
+
+require('go').setup({
+  lsp_cfg = true,
+  })
+
+-- TREESITTER
+
+require('nvim-treesitter').setup {}
+
+require('nvim-treesitter').install { 'go', 'gomod', 'gosum', 'gowork', 'gotmpl', 'python', 'javascript', 'lua'}

@@ -13,4 +13,5 @@ TODO's:
 ```shell
 brew install --cask font-fira-code-nerd-font
 brew install ripgrep
+brew install tree-sitter-cli
 ```
