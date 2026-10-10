@@ -10,6 +10,10 @@ vim.g.mapleader = ","
 
 require("config.lazy")
 
+-- COLORSCHEME
+
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 
 -- TELESCOPE
 
