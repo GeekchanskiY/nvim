@@ -14,4 +14,6 @@ TODO's:
 brew install --cask font-fira-code-nerd-font
 brew install ripgrep
 brew install tree-sitter-cli
+brew install watchman
+brew install lazygit
 ```
